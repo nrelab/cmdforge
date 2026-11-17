@@ -11,7 +11,7 @@ jobs:
   format:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
@@ -24,7 +24,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
     - name: Run cargo fmt
       run: cargo fmt -p cognix-cmdforge -p cognix-completion-metadata --check
     - name: Run cargo clippy
@@ -32,6 +32,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
     - name: Run tests
       run: cargo test --verbose
